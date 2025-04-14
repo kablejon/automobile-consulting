@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Automotive Industry Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        .search-box {
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding-left: 45px;
+        }
+        .search-box:before {
+            content: "🔍";
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 18px;
+        }
+        .category-section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .category-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .category-title i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #207cca;
+        }
+        .category-title h2 {
+            font-size: 1.5em;
+            color: #207cca;
+        }
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .site-item {
+            background: #f9f9f9;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .site-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .site-item a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+        }
+        .site-logo {
+            width: 32px;
+            height: 32px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .site-name {
+            font-weight: 500;
+        }
+        .site-desc {
+            margin-top: 5px;
+            font-size: 0.85em;
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .top-sites {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .top-site {
+            flex: 1;
+            min-width: 150px;
+            margin: 5px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        .top-site:hover {
+            transform: translateY(-5px);
+        }
+        .top-site a {
+            text-decoration: none;
+            color: #207cca;
+            font-weight: bold;
+        }
+        .top-site-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .site-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            .top-sites {
+                flex-direction: column;
+            }
+            .top-site {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Global Automotive Industry Portal</h1>
+            <p class="subtitle">Your One-Stop Resource for Automotive Industry Information</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for automotive websites, resources...">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="top-sites">
+            <div class="top-site">
+                <div class="top-site-icon">🚗</div>
+                <a href="#">Industry News</a>
+            </div>
+            <div class="top-site">
+                <div class="top-site-icon">🛒</div>
+                <a href="#">Buyer's Guide</a>
+            </div>
+            <div class="top-site">
+                <div class="top-site-icon">🔧</div>
+                <a href="#">Maintenance</a>
+            </div>
+            <div class="top-site">
+                <div class="top-site-icon">📊</div>
+                <a href="#">Market Data</a>
+            </div>
+            <div class="top-site">
+                <div class="top-site-icon">🔋</div>
+                <a href="#">EV Resources</a>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>📰</i>
+                <h2>Automotive News & Media</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://www.caranddriver.com/">
+                        <div class="site-logo">C</div>
+                        <div class="site-info">
+                            <div class="site-name">Car and Driver</div>
+                            <div class="site-desc">Leading automotive magazine with reviews and news</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.motortrend.com/">
+                        <div class="site-logo">M</div>
+                        <div class="site-info">
+                            <div class="site-name">MotorTrend</div>
+                            <div class="site-desc">Expert reviews, car news and automotive shows</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.autonews.com/">
+                        <div class="site-logo">A</div>
+                        <div class="site-info">
+                            <div class="site-name">Automotive News</div>
+                            <div class="site-desc">Business news and analysis for auto industry</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.roadandtrack.com/">
+                        <div class="site-logo">R</div>
+                        <div class="site-info">
+                            <div class="site-name">Road & Track</div>
+                            <div class="site-desc">Performance car news and driving impressions</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>🏭</i>
+                <h2>Manufacturer Websites</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://www.toyota.com/">
+                        <div class="site-logo">T</div>
+                        <div class="site-info">
+                            <div class="site-name">Toyota</div>
+                            <div class="site-desc">Official Toyota website</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.ford.com/">
+                        <div class="site-logo">F</div>
+                        <div class="site-info">
+                            <div class="site-name">Ford</div>
+                            <div class="site-desc">Official Ford Motor Company website</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.tesla.com/">
+                        <div class="site-logo">T</div>
+                        <div class="site-info">
+                            <div class="site-name">Tesla</div>
+                            <div class="site-desc">Official Tesla website</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.vw.com/">
+                        <div class="site-logo">V</div>
+                        <div class="site-info">
+                            <div class="site-name">Volkswagen</div>
+                            <div class="site-desc">Official Volkswagen website</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>🛒</i>
+                <h2>Car Shopping Resources</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://www.edmunds.com/">
+                        <div class="site-logo">E</div>
+                        <div class="site-info">
+                            <div class="site-name">Edmunds</div>
+                            <div class="site-desc">Car pricing, reviews and shopping tools</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.kbb.com/">
+                        <div class="site-logo">K</div>
+                        <div class="site-info">
+                            <div class="site-name">Kelley Blue Book</div>
+                            <div class="site-desc">Car values, dealer pricing and reviews</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.autotrader.com/">
+                        <div class="site-logo">A</div>
+                        <div class="site-info">
+                            <div class="site-name">AutoTrader</div>
+                            <div class="site-desc">New and used car listings marketplace</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.cargurus.com/">
+                        <div class="site-logo">C</div>
+                        <div class="site-info">
+                            <div class="site-name">CarGurus</div>
+                            <div class="site-desc">Car shopping platform with price analysis</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>🔧</i>
+                <h2>Maintenance & Repair</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://repairpal.com/">
+                        <div class="site-logo">R</div>
+                        <div class="site-info">
+                            <div class="site-name">RepairPal</div>
+                            <div class="site-desc">Car repair estimates and shop finder</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.yourmechanic.com/">
+                        <div class="site-logo">Y</div>
+                        <div class="site-info">
+                            <div class="site-name">YourMechanic</div>
+                            <div class="site-desc">Mobile mechanics who come to you</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.carcomplaints.com/">
+                        <div class="site-logo">C</div>
+                        <div class="site-info">
+                            <div class="site-name">CarComplaints</div>
+                            <div class="site-desc">Vehicle problems, defects & reliability issues</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.rockauto.com/">
+                        <div class="site-logo">R</div>
+                        <div class="site-info">
+                            <div class="site-name">RockAuto</div>
+                            <div class="site-desc">Auto parts warehouse with huge selection</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>📊</i>
+                <h2>Industry Data & Research</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://www.jdpower.com/cars">
+                        <div class="site-logo">J</div>
+                        <div class="site-info">
+                            <div class="site-name">J.D. Power</div>
+                            <div class="site-desc">Global automotive market research firm</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.marklines.com/">
+                        <div class="site-logo">M</div>
+                        <div class="site-info">
+                            <div class="site-name">MarkLines</div>
+                            <div class="site-desc">Automotive industry portal for market data</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.ihs.com/industry/automotive.html">
+                        <div class="site-logo">I</div>
+                        <div class="site-info">
+                            <div class="site-name">IHS Markit</div>
+                            <div class="site-desc">Automotive industry forecasts and analysis</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.statista.com/markets/419/topic/487/vehicles-road-traffic/">
+                        <div class="site-logo">S</div>
+                        <div class="site-info">
+                            <div class="site-name">Statista Automotive</div>
+                            <div class="site-desc">Statistics and market data on automotive</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>🔋</i>
+                <h2>Electric Vehicle Resources</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://insideevs.com/">
+                        <div class="site-logo">I</div>
+                        <div class="site-info">
+                            <div class="site-name">InsideEVs</div>
+                            <div class="site-desc">Electric vehicle news and reviews</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://electrek.co/">
+                        <div class="site-logo">E</div>
+                        <div class="site-info">
+                            <div class="site-name">Electrek</div>
+                            <div class="site-desc">EV industry news and reviews</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.plugshare.com/">
+                        <div class="site-logo">P</div>
+                        <div class="site-info">
+                            <div class="site-name">PlugShare</div>
+                            <div class="site-desc">EV charging station finder</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://afdc.energy.gov/fuels/electricity.html">
+                        <div class="site-logo">A</div>
+                        <div class="site-info">
+                            <div class="site-name">Alternative Fuels Data Center</div>
+                            <div class="site-desc">U.S. DOE resource for EV information</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">
+                <i>🌍</i>
+                <h2>Global Auto Shows & Events</h2>
+            </div>
+            <div class="site-grid">
+                <div class="site-item">
+                    <a href="https://www.autoshowny.com/">
+                        <div class="site-logo">N</div>
+                        <div class="site-info">
+                            <div class="site-name">New York Auto Show</div>
+                            <div class="site-desc">North America's first and largest auto show</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://naias.com/">
+                        <div class="site-logo">D</div>
+                        <div class="site-info">
+                            <div class="site-name">Detroit Auto Show</div>
+                            <div class="site-desc">North American International Auto Show</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.iaa.de/en">
+                        <div class="site-logo">F</div>
+                        <div class="site-info">
+                            <div class="site-name">Frankfurt Auto Show</div>
+                            <div class="site-desc">International Motor Show Germany (IAA)</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="site-item">
+                    <a href="https://www.gims.swiss/en/">
+                        <div class="site-logo">G</div>
+                        <div class="site-info">
+                            <div class="site-name">Geneva Motor Show</div>
+                            <div class="site-desc">International automobile exhibition</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Global Automotive Industry Portal - Your comprehensive resource for automotive information</p>
+            <p>Contact us: contact@autoindustryportal.com</p>
+        </div>
+    </footer>
+</body>
+</html>
