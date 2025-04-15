@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Automotive Industry Portal</title>
+    <title>Automobile Consulting - Global Automotive Industry Portal</title>
+    <meta name="description" content="Your one-stop resource for global automotive industry information, news, data, and consulting resources">
+    <meta name="keywords" content="automotive, cars, industry, consulting, automotive resources, car news, auto data">
+    <meta property="og:title" content="Automobile Consulting - Global Automotive Resource Directory">
+    <meta property="og:description" content="Find the best automotive industry resources, news, research, and data all in one place">
+    <meta property="og:url" content="https://automobile-consulting.shop">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://automobile-consulting.shop">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Add favicon.ico file to your repository -->
     <style>
         * {
             margin: 0;
@@ -158,6 +167,18 @@
             font-size: 2em;
             margin-bottom: 10px;
         }
+        .domain-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(32, 124, 202, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
         @media (max-width: 768px) {
             .site-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -168,14 +189,43 @@
             .top-site {
                 margin: 5px 0;
             }
+            .domain-badge {
+                bottom: 10px;
+                right: 10px;
+                font-size: 0.8em;
+            }
         }
     </style>
+    <!-- Simple JavaScript for Search Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBox = document.querySelector('.search-box input');
+            const siteItems = document.querySelectorAll('.site-item');
+            
+            searchBox.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                siteItems.forEach(item => {
+                    const siteName = item.querySelector('.site-name').textContent.toLowerCase();
+                    const siteDesc = item.querySelector('.site-desc').textContent.toLowerCase();
+                    
+                    if (siteName.includes(searchTerm) || siteDesc.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
+    <div class="domain-badge">automobile-consulting.shop</div>
+    
     <header>
         <div class="container">
-            <h1>Global Automotive Industry Portal</h1>
-            <p class="subtitle">Your One-Stop Resource for Automotive Industry Information</p>
+            <h1>Automobile Consulting</h1>
+            <p class="subtitle">Your One-Stop Resource for Global Automotive Industry Information</p>
             <div class="search-box">
                 <input type="text" placeholder="Search for automotive websites, resources...">
             </div>
@@ -186,34 +236,34 @@
         <div class="top-sites">
             <div class="top-site">
                 <div class="top-site-icon">🚗</div>
-                <a href="#">Industry News</a>
+                <a href="#industry-news">Industry News</a>
             </div>
             <div class="top-site">
                 <div class="top-site-icon">🛒</div>
-                <a href="#">Buyer's Guide</a>
+                <a href="#car-shopping">Buyer's Guide</a>
             </div>
             <div class="top-site">
                 <div class="top-site-icon">🔧</div>
-                <a href="#">Maintenance</a>
+                <a href="#maintenance">Maintenance</a>
             </div>
             <div class="top-site">
                 <div class="top-site-icon">📊</div>
-                <a href="#">Market Data</a>
+                <a href="#industry-data">Market Data</a>
             </div>
             <div class="top-site">
                 <div class="top-site-icon">🔋</div>
-                <a href="#">EV Resources</a>
+                <a href="#ev-resources">EV Resources</a>
             </div>
         </div>
 
-        <div class="category-section">
+        <div id="industry-news" class="category-section">
             <div class="category-title">
                 <i>📰</i>
                 <h2>Automotive News & Media</h2>
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://www.caranddriver.com/">
+                    <a href="https://www.caranddriver.com/" target="_blank" rel="noopener">
                         <div class="site-logo">C</div>
                         <div class="site-info">
                             <div class="site-name">Car and Driver</div>
@@ -222,7 +272,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.motortrend.com/">
+                    <a href="https://www.motortrend.com/" target="_blank" rel="noopener">
                         <div class="site-logo">M</div>
                         <div class="site-info">
                             <div class="site-name">MotorTrend</div>
@@ -231,7 +281,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.autonews.com/">
+                    <a href="https://www.autonews.com/" target="_blank" rel="noopener">
                         <div class="site-logo">A</div>
                         <div class="site-info">
                             <div class="site-name">Automotive News</div>
@@ -240,7 +290,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.roadandtrack.com/">
+                    <a href="https://www.roadandtrack.com/" target="_blank" rel="noopener">
                         <div class="site-logo">R</div>
                         <div class="site-info">
                             <div class="site-name">Road & Track</div>
@@ -258,7 +308,7 @@
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://www.toyota.com/">
+                    <a href="https://www.toyota.com/" target="_blank" rel="noopener">
                         <div class="site-logo">T</div>
                         <div class="site-info">
                             <div class="site-name">Toyota</div>
@@ -267,7 +317,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.ford.com/">
+                    <a href="https://www.ford.com/" target="_blank" rel="noopener">
                         <div class="site-logo">F</div>
                         <div class="site-info">
                             <div class="site-name">Ford</div>
@@ -276,7 +326,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.tesla.com/">
+                    <a href="https://www.tesla.com/" target="_blank" rel="noopener">
                         <div class="site-logo">T</div>
                         <div class="site-info">
                             <div class="site-name">Tesla</div>
@@ -285,7 +335,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.vw.com/">
+                    <a href="https://www.vw.com/" target="_blank" rel="noopener">
                         <div class="site-logo">V</div>
                         <div class="site-info">
                             <div class="site-name">Volkswagen</div>
@@ -296,14 +346,14 @@
             </div>
         </div>
 
-        <div class="category-section">
+        <div id="car-shopping" class="category-section">
             <div class="category-title">
                 <i>🛒</i>
                 <h2>Car Shopping Resources</h2>
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://www.edmunds.com/">
+                    <a href="https://www.edmunds.com/" target="_blank" rel="noopener">
                         <div class="site-logo">E</div>
                         <div class="site-info">
                             <div class="site-name">Edmunds</div>
@@ -312,7 +362,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.kbb.com/">
+                    <a href="https://www.kbb.com/" target="_blank" rel="noopener">
                         <div class="site-logo">K</div>
                         <div class="site-info">
                             <div class="site-name">Kelley Blue Book</div>
@@ -321,7 +371,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.autotrader.com/">
+                    <a href="https://www.autotrader.com/" target="_blank" rel="noopener">
                         <div class="site-logo">A</div>
                         <div class="site-info">
                             <div class="site-name">AutoTrader</div>
@@ -330,7 +380,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.cargurus.com/">
+                    <a href="https://www.cargurus.com/" target="_blank" rel="noopener">
                         <div class="site-logo">C</div>
                         <div class="site-info">
                             <div class="site-name">CarGurus</div>
@@ -341,14 +391,14 @@
             </div>
         </div>
 
-        <div class="category-section">
+        <div id="maintenance" class="category-section">
             <div class="category-title">
                 <i>🔧</i>
                 <h2>Maintenance & Repair</h2>
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://repairpal.com/">
+                    <a href="https://repairpal.com/" target="_blank" rel="noopener">
                         <div class="site-logo">R</div>
                         <div class="site-info">
                             <div class="site-name">RepairPal</div>
@@ -357,7 +407,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.yourmechanic.com/">
+                    <a href="https://www.yourmechanic.com/" target="_blank" rel="noopener">
                         <div class="site-logo">Y</div>
                         <div class="site-info">
                             <div class="site-name">YourMechanic</div>
@@ -366,7 +416,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.carcomplaints.com/">
+                    <a href="https://www.carcomplaints.com/" target="_blank" rel="noopener">
                         <div class="site-logo">C</div>
                         <div class="site-info">
                             <div class="site-name">CarComplaints</div>
@@ -375,7 +425,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.rockauto.com/">
+                    <a href="https://www.rockauto.com/" target="_blank" rel="noopener">
                         <div class="site-logo">R</div>
                         <div class="site-info">
                             <div class="site-name">RockAuto</div>
@@ -386,14 +436,14 @@
             </div>
         </div>
 
-        <div class="category-section">
+        <div id="industry-data" class="category-section">
             <div class="category-title">
                 <i>📊</i>
                 <h2>Industry Data & Research</h2>
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://www.jdpower.com/cars">
+                    <a href="https://www.jdpower.com/cars" target="_blank" rel="noopener">
                         <div class="site-logo">J</div>
                         <div class="site-info">
                             <div class="site-name">J.D. Power</div>
@@ -402,7 +452,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.marklines.com/">
+                    <a href="https://www.marklines.com/" target="_blank" rel="noopener">
                         <div class="site-logo">M</div>
                         <div class="site-info">
                             <div class="site-name">MarkLines</div>
@@ -411,7 +461,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.ihs.com/industry/automotive.html">
+                    <a href="https://www.ihs.com/industry/automotive.html" target="_blank" rel="noopener">
                         <div class="site-logo">I</div>
                         <div class="site-info">
                             <div class="site-name">IHS Markit</div>
@@ -420,7 +470,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.statista.com/markets/419/topic/487/vehicles-road-traffic/">
+                    <a href="https://www.statista.com/markets/419/topic/487/vehicles-road-traffic/" target="_blank" rel="noopener">
                         <div class="site-logo">S</div>
                         <div class="site-info">
                             <div class="site-name">Statista Automotive</div>
@@ -431,14 +481,14 @@
             </div>
         </div>
 
-        <div class="category-section">
+        <div id="ev-resources" class="category-section">
             <div class="category-title">
                 <i>🔋</i>
                 <h2>Electric Vehicle Resources</h2>
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://insideevs.com/">
+                    <a href="https://insideevs.com/" target="_blank" rel="noopener">
                         <div class="site-logo">I</div>
                         <div class="site-info">
                             <div class="site-name">InsideEVs</div>
@@ -447,7 +497,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://electrek.co/">
+                    <a href="https://electrek.co/" target="_blank" rel="noopener">
                         <div class="site-logo">E</div>
                         <div class="site-info">
                             <div class="site-name">Electrek</div>
@@ -456,7 +506,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.plugshare.com/">
+                    <a href="https://www.plugshare.com/" target="_blank" rel="noopener">
                         <div class="site-logo">P</div>
                         <div class="site-info">
                             <div class="site-name">PlugShare</div>
@@ -465,7 +515,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://afdc.energy.gov/fuels/electricity.html">
+                    <a href="https://afdc.energy.gov/fuels/electricity.html" target="_blank" rel="noopener">
                         <div class="site-logo">A</div>
                         <div class="site-info">
                             <div class="site-name">Alternative Fuels Data Center</div>
@@ -483,7 +533,7 @@
             </div>
             <div class="site-grid">
                 <div class="site-item">
-                    <a href="https://www.autoshowny.com/">
+                    <a href="https://www.autoshowny.com/" target="_blank" rel="noopener">
                         <div class="site-logo">N</div>
                         <div class="site-info">
                             <div class="site-name">New York Auto Show</div>
@@ -492,7 +542,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://naias.com/">
+                    <a href="https://naias.com/" target="_blank" rel="noopener">
                         <div class="site-logo">D</div>
                         <div class="site-info">
                             <div class="site-name">Detroit Auto Show</div>
@@ -501,7 +551,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.iaa.de/en">
+                    <a href="https://www.iaa.de/en" target="_blank" rel="noopener">
                         <div class="site-logo">F</div>
                         <div class="site-info">
                             <div class="site-name">Frankfurt Auto Show</div>
@@ -510,7 +560,7 @@
                     </a>
                 </div>
                 <div class="site-item">
-                    <a href="https://www.gims.swiss/en/">
+                    <a href="https://www.gims.swiss/en/" target="_blank" rel="noopener">
                         <div class="site-logo">G</div>
                         <div class="site-info">
                             <div class="site-name">Geneva Motor Show</div>
@@ -524,8 +574,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Global Automotive Industry Portal - Your comprehensive resource for automotive information</p>
-            <p>Contact us: contact@autoindustryportal.com</p>
+            <p>© 2025 <a href="https://automobile-consulting.shop">automobile-consulting.shop</a> - Your comprehensive resource for automotive information</p>
+            <p>Contact us: <a href="mailto:contact@automobile-consulting.shop">contact@automobile-consulting.shop</a></p>
         </div>
     </footer>
 </body>
